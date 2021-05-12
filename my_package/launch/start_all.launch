@@ -1,0 +1,31 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="auto_start" default="true" />  <!-- test2: set -> "ture" -->  
+    <arg name="open_rviz" default="false" />    
+
+    <!-- SLAM -->
+    <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+        <arg name="open_rviz" value="$(arg open_rviz)" />
+    </include>
+
+    <!-- Navigation -->
+    <include file="$(find turtlebot3_navigation)/launch/move_base.launch" />
+    <include file="$(find turtlebot3_navigation)/launch/amcl.launch" />
+
+    <!-- Exploration -->
+    <include file="$(find explore_lite)/launch/explore.launch">
+        <arg name="auto_start" value="$(arg auto_start)" />
+    </include>
+
+    <!-- My Node -->
+    <node pkg="my_package" type="my_node.py" name="my_node" output="screen" />
+
+    <node pkg="my_package" type="param_reader.py" name="param_reader" output="screen">
+         <rosparam file="$(find practice_mazes)/param/beacons_0.yaml" command="load" />
+    </node>
+
+    <!-- RViz (don't change) -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find my_package)/rviz/my_layout.rviz"/>
+
+</launch>
