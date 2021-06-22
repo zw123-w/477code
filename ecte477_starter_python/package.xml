@@ -1,0 +1,17 @@
+<package format="2">
+  <name>ecte477_starter_python</name>
+  <version>0.0.1</version>
+  <description>
+  This package contains starter code for Assignment 1 in Python
+  </description>
+  <maintainer email="brendanh@uow.edu.au">Brendan Halloran</maintainer>
+  <license>GPL</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>sensor_msgs</depend>
+
+</package>

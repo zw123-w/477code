@@ -1,0 +1,5 @@
+<!-- Launch the depth_node.py node -->
+<launch >
+    <node pkg="ecte477_starter_python" type="navigator_node.py" name="navigator_node" output="screen">
+    </node>
+</launch>

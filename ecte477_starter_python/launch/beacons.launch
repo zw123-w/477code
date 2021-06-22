@@ -1,0 +1,6 @@
+<!-- Launch the beacon_node.py node with the beacon params -->
+<launch >
+    <node pkg="ecte477_starter_python" type="beacon_node.py" name="beacon_node" output="screen">
+        <rosparam file="$(find ecte477_starter_python)/param/beacons.yaml" command="load" />
+    </node>
+</launch>
