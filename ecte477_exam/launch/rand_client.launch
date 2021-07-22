@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="ecte477_exam" type="rand_client.py" name="rand_client" output="screen" />
+</launch>
