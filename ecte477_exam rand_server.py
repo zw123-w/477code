@@ -7,7 +7,7 @@ from ecte477_exam.msg import RandAction, RandFeedback, RandResult
 
 class rand_server:
     def __init__(self,name):
-        self.name = name
+        self.name = rand_server
         self.feedback = RandFeedback()
         
         self.action_server = SimpleActionServer(self.name, RandAction, execute_cb = self.execute_callback, auto_start = False)
